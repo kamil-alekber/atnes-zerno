@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
+import Menu from "../components/Menu/Menu";
 import "semantic-ui-css/semantic.min.css";
-import Menu from "../components/Menu";
+import "../public/style/main.scss";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",
@@ -19,9 +20,11 @@ const app = !firebase.apps.length
 
 function App({ Component, pageProps }) {
   return (
-    <Menu>
-      <Component {...pageProps} app={app} />
-    </Menu>
+    <main id="main">
+      <Menu>
+        <Component {...pageProps} app={app} />
+      </Menu>
+    </main>
   );
 }
 

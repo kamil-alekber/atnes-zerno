@@ -1,6 +1,8 @@
 import React, { Children } from "react";
 import { Menu, MenuItemProps } from "semantic-ui-react";
 import { useRouter } from "next/router";
+import "./Menu.scss";
+
 export default function SiteMenu({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const { pathname } = router;
@@ -14,7 +16,7 @@ export default function SiteMenu({ children }: { children: React.ReactNode }) {
 
   return (
     <React.Fragment>
-      <Menu secondary>
+      <Menu className="siteMenu" secondary>
         <Menu.Item
           name="home"
           active={pathname === "/"}
