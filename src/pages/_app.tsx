@@ -1,8 +1,11 @@
 import firebase from "firebase/app";
 import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
-import Menu from "../components/Menu/Menu";
+import Menu from "../components/Common/Menu";
 import "../assets/style/main.scss";
+import Header from "../components/Common/Header";
+import Footer from "../components/Common/Footer";
+import { Segment } from "semantic-ui-react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",
@@ -39,12 +42,16 @@ export default function App({ Component, pageProps }) {
   });
 
   return (
-    <main id="main">
-      <OrderCountContext.Provider value={{ orderCount, setOrderCount }}>
-        <Menu>
-          <Component {...pageProps} app={app} />
-        </Menu>
-      </OrderCountContext.Provider>
+    <main id="app">
+      <Segment className="app-segment">
+        <Header />
+        <OrderCountContext.Provider value={{ orderCount, setOrderCount }}>
+          <Menu>
+            <Component {...pageProps} app={app} />
+          </Menu>
+        </OrderCountContext.Provider>
+        <Footer />
+      </Segment>
     </main>
   );
 }

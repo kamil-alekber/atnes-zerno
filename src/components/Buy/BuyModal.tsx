@@ -80,7 +80,7 @@ export default function BuyModal(props: Props) {
               <TextArea onChange={onFormChnage("meta")} />
             </Form.Field>
             <Form.Field required>
-              <Checkbox label="I agree to the Terms and Conditions" />
+              <Checkbox label="Даю согласие на обработку персональных данных" />
             </Form.Field>
             <Button color="green" type="submit">
               Заказать

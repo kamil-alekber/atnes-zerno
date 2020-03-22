@@ -1,8 +1,15 @@
 // main: #DFECB8
+body {
+  background-color: #f5f6f7;
+}
 
-#main {
+#app {
   max-width: 80%;
   margin: 0 auto;
+
+  .app-segment {
+    padding: 2.5rem;
+  }
 }
 
 .page-title {
