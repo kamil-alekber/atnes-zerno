@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
-import Menu from "../components/Menu/Menu";
+import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
+import Menu from "../components/Menu/Menu";
 import "../public/style/main.scss";
 
 const firebaseConfig = {
@@ -18,14 +19,32 @@ const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
 
-function App({ Component, pageProps }) {
+interface OrderCountContext {
+  orderCount: number;
+  setOrderCount: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export const OrderCountContext = React.createContext<OrderCountContext>({
+  orderCount: 0,
+  setOrderCount: () => {}
+});
+
+export default function App({ Component, pageProps }) {
+  const [orderCount, setOrderCount] = useState(() => {
+    let count = 0;
+    if (typeof window !== "undefined") {
+      count = JSON.parse(localStorage.getItem("orderCount") || "0");
+    }
+    return count;
+  });
+
   return (
     <main id="main">
-      <Menu>
-        <Component {...pageProps} app={app} />
-      </Menu>
+      <OrderCountContext.Provider value={{ orderCount, setOrderCount }}>
+        <Menu>
+          <Component {...pageProps} app={app} />
+        </Menu>
+      </OrderCountContext.Provider>
     </main>
   );
 }
-
-export default App;

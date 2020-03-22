@@ -1,2 +1,8 @@
-.siteMenu {
+#siteMenu {
+  display: flex;
+  justify-content: space-evenly;
+
+  a:hover {
+    background: lightblue;
+  }
 }
