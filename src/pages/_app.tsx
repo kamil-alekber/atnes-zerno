@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
 import Menu from "../components/Menu/Menu";
-import "../public/style/main.scss";
+import "../assets/style/main.scss";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",

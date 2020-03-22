@@ -32,13 +32,7 @@ export default function index() {
               </Item.Content>
               {index === 0 && (
                 <Item.Extra>
-                  <BuyModal
-                    triggerBtn={
-                      <Button primary floated="right">
-                        Оформить заказ
-                      </Button>
-                    }
-                  />
+                  <BuyModal triggerModelBtn="Оформить заказ" />
                 </Item.Extra>
               )}
             </Item>
