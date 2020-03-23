@@ -9,14 +9,76 @@ body {
 
   .app-segment {
     padding: 2.5rem;
+    overflow: hidden;
   }
 }
 
 .page-title {
-  text-align: center;
+  text-align: left;
+  font-weight: lighter;
   margin: 1rem 0 2rem 0;
 }
 
-.top-page-section {
+.about-section {
+  margin-top: 2rem;
+  p {
+    line-height: 2;
+  }
+  .about-top-picture {
+    background-image: url("../images/field.jpg");
+    height: 580px;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+  }
+  .work-with-us {
+    position: relative;
+    img {
+      width: 100%;
+      max-height: 350px;
+      border-radius: 10px;
+      filter: grayscale(0.3);
+    }
+
+    .article-content {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5rem;
+
+      h1 {
+        font-weight: lighter;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .about-article {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 3rem 0;
+
+    :first-child {
+      margin-right: 3rem;
+    }
+    .article-img {
+      img {
+        border-radius: 10px;
+        // max-height: 390px;
+        // min-height: 100%;
+      }
+    }
+
+    .article-content {
+      h3 {
+        font-weight: lighter;
+      }
+    }
+  }
+}
+
+.wrapper {
   margin-top: 2rem;
 }

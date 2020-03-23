@@ -6,7 +6,7 @@ module.exports = withImages(
   withSass(
     withCSS({
       distDir: "dist",
-      esModule: true,
+      esModule: false,
       webpack: function(config) {
         config.module.rules.push({
           test: /\.(eot|woff|woff2|ttf|jpeg|png|svg)$/,

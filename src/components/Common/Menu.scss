@@ -1,8 +1,14 @@
-#siteMenu {
+#menu {
   display: flex;
   justify-content: space-evenly;
 
-  a:hover {
-    background: lightblue;
+  .menu-item {
+    text-transform: uppercase;
+    color: #2873bd;
   }
+}
+
+.menu-line {
+  margin: 1rem -500px 1rem -500px;
+  opacity: 0.4;
 }

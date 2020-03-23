@@ -19,33 +19,38 @@ export default function SiteMenu({ children }: { children: React.ReactNode }) {
 
   return (
     <React.Fragment>
-      <Menu id="siteMenu" secondary>
+      <hr className="menu-line" />
+      <Menu id="menu" secondary>
         <Menu.Item
+          className="menu-item"
           name="home"
           children="Домой"
           active={pathname === "/"}
           onClick={handleMenuChange}
         />
         <Menu.Item
+          className="menu-item"
           name="about"
-          children="О нас"
+          children="О компании"
           active={pathname === "/about"}
           onClick={handleMenuChange}
         />
         <Menu.Item
+          className="menu-item"
           name="contact"
           children="Контакты"
           active={pathname === "/contact"}
           onClick={handleMenuChange}
         />
         <Menu.Item
+          className="menu-item"
           name="order"
           children={`Ваши заказы${orderCount ? `: ${orderCount}` : ""}`}
           active={pathname === "/order"}
           onClick={handleMenuChange}
         />
       </Menu>
-
+      <hr className="menu-line" />
       {children}
     </React.Fragment>
   );
