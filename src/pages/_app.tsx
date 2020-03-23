@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Segment } from "semantic-ui-react";
 import "../assets/style/main.scss";
-import Footer from "../components/Layout/Footer";
-import Header from "../components/Layout/Header";
-import Menu from "../components/Layout/Menu";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
+import Menu from "../components/layout/Menu";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",

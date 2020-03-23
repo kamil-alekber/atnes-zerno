@@ -1,12 +1,5 @@
 import React from "react";
-import Description from "../../components/Index/Description";
-import Showcase from "../../components/Index/Showcase";
-
+import Index from "../../components/index";
 export default function index(props) {
-  return (
-    <section className="index-section">
-      <Showcase />
-      <Description />
-    </section>
-  );
+  return <Index />;
 }

@@ -57,6 +57,7 @@ export default function SiteMenu({ children }: { children: React.ReactNode }) {
           onClick={handleMenuChange}
         />
       </Menu>
+      <Icon name="envelope" />
       <Icon name="play" />
       <hr className="menu-line" />
       {children}

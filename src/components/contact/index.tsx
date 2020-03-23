@@ -24,9 +24,9 @@ const items = [
 
 export default function Contact() {
   return (
-    <div>
+    <section className="contact-section">
       <h1 className="page-title">Контакты</h1>
       <Card.Group className="contact-group" items={items} />
-    </div>
+    </section>
   );
 }

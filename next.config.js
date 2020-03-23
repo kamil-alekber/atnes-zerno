@@ -5,7 +5,6 @@ const withImages = require("next-images");
 module.exports = withImages(
   withSass(
     withCSS({
-      distDir: "dist",
       esModule: false,
       webpack: function(config) {
         config.module.rules.push({
