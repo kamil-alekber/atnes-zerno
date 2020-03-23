@@ -1,11 +1,11 @@
 import firebase from "firebase/app";
 import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
-import Menu from "../components/Common/Menu";
-import "../assets/style/main.scss";
-import Header from "../components/Common/Header";
-import Footer from "../components/Common/Footer";
 import { Segment } from "semantic-ui-react";
+import "../assets/style/main.scss";
+import Footer from "../components/Layout/Footer";
+import Header from "../components/Layout/Header";
+import Menu from "../components/Layout/Menu";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",
