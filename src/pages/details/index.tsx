@@ -16,7 +16,7 @@ export default function index() {
   };
 
   return (
-    <section className="top-page-section">
+    <section className="details-section">
       <h1 className="page-title">{router.query.name}</h1>
       <Grid divided="vertically" padded>
         <Grid.Row columns={2}>

@@ -1,0 +1,48 @@
+.description {
+  .description-title {
+    font-weight: lighter;
+    text-align: center;
+  }
+  .description-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    :first-child {
+      margin-right: 20px;
+      flex-grow: 1;
+    }
+
+    .last-child {
+      flex-grow: 1;
+      background-color: #fff !important;
+      border: rgba(00, 00, 00, 0.2) solid 1px;
+    }
+
+    .description-container-item {
+      min-height: 380px;
+      border-radius: 10px;
+      background-color: #caeafb;
+      display: flex;
+      position: relative;
+      margin-bottom: 2rem;
+
+      .article-img {
+        position: absolute;
+        width: 40%;
+        height: 150px;
+        top: 0;
+        left: 33%;
+        border-radius: 10px;
+      }
+
+      .article-content {
+        margin-left: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: 200px;
+      }
+    }
+  }
+}

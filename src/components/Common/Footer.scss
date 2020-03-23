@@ -8,3 +8,30 @@
   margin: 1rem -500px 1rem -500px;
   opacity: 0.4;
 }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    line-height: 2;
+    li {
+      a {
+        color: #333;
+        cursor: pointer;
+
+        &:hover {
+          color: #0682dc;
+        }
+      }
+    }
+  }
+
+  :last-child {
+    padding-right: 1rem;
+  }
+}

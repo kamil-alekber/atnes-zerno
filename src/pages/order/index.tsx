@@ -15,7 +15,7 @@ export default function index() {
     console.log("buy");
   };
   return (
-    <section className="top-page-section">
+    <section className="order-section">
       <h1 className="page-title">Ваши заказы</h1>
       <Item.Group divided>
         {products.map((item, index) => {
