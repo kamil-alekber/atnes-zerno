@@ -5,6 +5,11 @@ body {
 
 #app {
   max-width: 80%;
+
+  @media only screen and (max-width: 880px) {
+    max-width: 100%;
+  }
+
   margin: 0 auto;
 
   .app-segment {
@@ -67,8 +72,6 @@ body {
     .article-img {
       img {
         border-radius: 10px;
-        // max-height: 390px;
-        // min-height: 100%;
       }
     }
 

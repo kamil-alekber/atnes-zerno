@@ -3,6 +3,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media only screen and (max-width: 880px) {
+    display: block;
+    text-align: center;
+  }
 }
 .footer-line {
   margin: 1rem -500px 1rem -500px;
@@ -14,6 +19,13 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+
+  @media only screen and (max-width: 880px) {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
   ul {
     padding: 0;
@@ -33,5 +45,9 @@
 
   :last-child {
     padding-right: 1rem;
+
+    @media only screen and (max-width: 880px) {
+      padding: 0;
+    }
   }
 }

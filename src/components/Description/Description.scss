@@ -9,6 +9,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @media only screen and (max-width: 880px) {
+      display: block;
+    }
+
     :first-child {
       margin-right: 20px;
       flex-grow: 1;
@@ -32,7 +36,7 @@
         position: absolute;
         width: 40%;
         height: 150px;
-        top: 0;
+        top: 10px;
         left: 33%;
         border-radius: 10px;
       }

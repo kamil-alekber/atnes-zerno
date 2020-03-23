@@ -1,17 +1,36 @@
 import React from "react";
 import "./Showcase.scss";
+import Link from "next/link";
 
 export default function Showcase() {
   return (
     <div className="showcase">
       <div className="showcase-item showcase-item-one">
         <img src={require("../../assets/images/field.jpg")} alt="" />
+        <Link href="/about">
+          <a />
+        </Link>
       </div>
       <div className="showcase-item showcase-item-two">
-        <img src={require("../../assets/images/field.jpg")} alt="" />
+        <div className="top-image">
+          <img src={require("../../assets/images/field.jpg")} alt="" />
+          <Link href="/">
+            <a />
+          </Link>
+        </div>
         <div className="sub-items">
-          <img src={require("../../assets/images/field.jpg")} alt="" />
-          <img src={require("../../assets/images/field.jpg")} alt="" />
+          <span className="bottom-first-img">
+            <img src={require("../../assets/images/field.jpg")} alt="" />
+            <Link href="/contact">
+              <a />
+            </Link>
+          </span>
+          <span className="bottom-second-img">
+            <img src={require("../../assets/images/field.jpg")} alt="" />
+            <Link href="/order">
+              <a />
+            </Link>
+          </span>
         </div>
       </div>
     </div>
