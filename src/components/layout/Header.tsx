@@ -10,7 +10,7 @@ export default function Header() {
         <br />
         <small>Ежедневно с 9:00 до 21:00</small>
       </div>
-      <div className="header-third-item">Kazakhstan</div>
+      <div className="header-third-item">Казахстан</div>
     </header>
   );
 }

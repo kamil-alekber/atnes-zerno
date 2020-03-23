@@ -1,8 +1,8 @@
 import firebase from "firebase/app";
 import React, { useState } from "react";
+import "../assets/style/main.scss";
 import "semantic-ui-css/semantic.min.css";
 import { Segment } from "semantic-ui-react";
-import "../assets/style/main.scss";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Menu from "../components/layout/Menu";

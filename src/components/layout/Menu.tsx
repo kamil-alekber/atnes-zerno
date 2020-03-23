@@ -52,13 +52,13 @@ export default function SiteMenu({ children }: { children: React.ReactNode }) {
         <Menu.Item
           className="menu-item"
           name="order"
-          children={`Ваши заказы${orderCount ? `: ${orderCount}` : ""}`}
           active={pathname === "/order"}
           onClick={handleMenuChange}
-        />
+        >
+          {/* {`Ваши заказы ${orderCount ? `:${orderCount}` : ""}`} */}
+          <Icon name="shop" /> Ваши заказы
+        </Menu.Item>
       </Menu>
-      <Icon name="envelope" />
-      <Icon name="play" />
       <hr className="menu-line" />
       {children}
     </React.Fragment>

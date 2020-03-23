@@ -13,6 +13,7 @@ module.exports = withImages(
             loader: "url-loader",
             options: {
               limit: 100000,
+              esModule: false,
               name: "[name].[ext]"
             }
           }

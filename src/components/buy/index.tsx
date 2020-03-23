@@ -8,7 +8,8 @@ import {
   Form,
   Checkbox,
   TextArea,
-  FormProps
+  FormProps,
+  Icon
 } from "semantic-ui-react";
 
 interface Props {
@@ -48,7 +49,7 @@ export default function BuyModal(props: Props) {
 
   const trigger = (
     <Button color="teal" onClick={() => setVisible(true)} floated="right">
-      {props.triggerModelBtn}
+      <Icon name="flag checkered" /> {props.triggerModelBtn}
     </Button>
   );
 

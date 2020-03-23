@@ -1,5 +1,5 @@
 import React from "react";
-import { Item, Button, Divider } from "semantic-ui-react";
+import { Item, Button, Divider, Icon } from "semantic-ui-react";
 
 const paragraph =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui provident exercitationem aliquid dolore iure unde! Illo vero, nobis est maxime perferendis error nihil dolores fugit consequuntur fuga odit, nisi quibusdam?";
@@ -19,7 +19,7 @@ export default function Catalog() {
             <Item.Description>{paragraph}</Item.Description>
             <Item.Extra>
               <Button color="teal" floated="right">
-                Добавить в корзину
+                <Icon name="plus" /> Добавить в корзину
               </Button>
             </Item.Extra>
           </Item.Content>
@@ -36,7 +36,7 @@ export default function Catalog() {
             <Item.Description>{paragraph}</Item.Description>
             <Item.Extra>
               <Button color="teal" floated="right">
-                Добавить в корзину
+                <Icon name="plus" /> Добавить в корзину
               </Button>
             </Item.Extra>
           </Item.Content>
@@ -53,7 +53,7 @@ export default function Catalog() {
             <Item.Description>{paragraph}</Item.Description>
             <Item.Extra>
               <Button color="teal" floated="right">
-                Добавить в корзину
+                <Icon name="plus" /> Добавить в корзину
               </Button>
             </Item.Extra>
           </Item.Content>
