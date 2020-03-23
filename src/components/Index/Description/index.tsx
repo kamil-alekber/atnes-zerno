@@ -1,5 +1,6 @@
 import React from "react";
 import "./Description.scss";
+import Link from "next/link";
 
 export default function Description() {
   return (
@@ -20,7 +21,9 @@ export default function Description() {
               <li>Находится под мойкой</li>
               <li>Несколько степеней очистки воды</li>
             </ul>
-            <a href="">УЗНАЙТЕ БОЛЬШЕ О СОТРУДНИЧЕСТВЕ </a>
+            <Link href="/details?dark=true">
+              <a>УЗНАЙТЕ БОЛЬШЕ О СОТРУДНИЧЕСТВЕ </a>
+            </Link>
           </div>
         </div>
         <div className="description-container-item last-child">
@@ -36,7 +39,9 @@ export default function Description() {
               <li>Находится под мойкой</li>
               <li>Несколько степеней очистки воды</li>
             </ul>
-            <a href="">УЗНАЙТЕ БОЛЬШЕ О СОТРУДНИЧЕСТВЕ </a>
+            <Link href="/details">
+              <a>УЗНАЙТЕ БОЛЬШЕ О СОТРУДНИЧЕСТВЕ </a>
+            </Link>
           </div>
         </div>
       </article>

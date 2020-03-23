@@ -1,5 +1,5 @@
 import React from "react";
-import { Item, Button, Icon } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 import BuyModal from "../../components/Buy/BuyModal";
 
 export default function index() {
@@ -21,7 +21,10 @@ export default function index() {
         {products.map((item, index) => {
           return (
             <Item key={index}>
-              <Item.Image size="tiny" src="https://picsum.photos/200/300" />
+              <Item.Image
+                size="tiny"
+                src={require("../../assets/images/main1.jpg")}
+              />
 
               <Item.Content>
                 <Item.Header>{item.title}</Item.Header>

@@ -1,9 +1,10 @@
 import React from "react";
+import Contact from "../../components/Contact";
 
 export default function index() {
   return (
     <section className="contact-section">
-      <h1 className="page-title">Контакты</h1>
+      <Contact />
     </section>
   );
 }

@@ -47,7 +47,7 @@ export default function BuyModal(props: Props) {
   };
 
   const trigger = (
-    <Button onClick={() => setVisible(true)} primary floated="right">
+    <Button color="teal" onClick={() => setVisible(true)} floated="right">
       {props.triggerModelBtn}
     </Button>
   );
@@ -56,7 +56,11 @@ export default function BuyModal(props: Props) {
     <Modal open={visible} trigger={trigger}>
       <Modal.Header>Завершение покупки</Modal.Header>
       <Modal.Content image>
-        <Image wrapped size="medium" src="https://picsum.photos/200/300" />
+        <Image
+          wrapped
+          size="medium"
+          src={require("../../assets/images/main1.jpg")}
+        />
         <Modal.Description>
           <Header>Заполните форму вашими данными</Header>
           <Form onSubmit={handleFormSumbit}>
@@ -82,7 +86,7 @@ export default function BuyModal(props: Props) {
             <Form.Field required>
               <Checkbox label="Даю согласие на обработку персональных данных" />
             </Form.Field>
-            <Button color="green" type="submit">
+            <Button color="teal" type="submit">
               Заказать
             </Button>
             <Button onClick={handleClose} type="close">
