@@ -11,7 +11,7 @@ export default function Description() {
         <div className="description-container-item">
           <img
             className="article-img"
-            src={require("../../assets/images/work-with-us.jpg")}
+            src={require("../../../assets/images/work-with-us.jpg")}
             alt=""
           />
           <div className="article-content">
@@ -29,7 +29,7 @@ export default function Description() {
         <div className="description-container-item last-child">
           <img
             className="article-img"
-            src={require("../../assets/images/work-with-us.jpg")}
+            src={require("../../../assets/images/work-with-us.jpg")}
             alt=""
           />
           <div className="article-content">
