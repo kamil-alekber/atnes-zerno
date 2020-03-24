@@ -4,3 +4,4 @@ node_modules
 .firebase
 out
 build
+dist

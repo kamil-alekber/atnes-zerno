@@ -1,15 +1,7 @@
 const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 const withImages = require("next-images");
-
-require("dotenv").config(
-  process.env.APP_TYPE === "dev"
-    ? {
-        path: "./dev.env"
-      }
-    : { path: "./prod.env" }
-);
-
+// exportPathMap
 module.exports = withImages(
   withSass(
     withCSS({
