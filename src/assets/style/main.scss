@@ -1,6 +1,7 @@
 // main: #DFECB8
 body {
   background-color: #f5f6f7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #app {
@@ -13,6 +14,9 @@ body {
   margin: 0 auto;
 
   .app-segment {
+    @media only screen and (max-width: 880px) {
+      padding: 0 1rem;
+    }
     min-height: 100vh;
     padding: 2.5rem;
     overflow: hidden;
