@@ -16,13 +16,19 @@ export default function MobileMenu(props: Props) {
     _event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     data: MenuItemProps
   ) {
-    if (mobile) mobileTriggerAfterEvent();
     const path = data.name === "home" ? "/" : `/${data.name}`;
     router.push({ pathname: path });
+    if (mobile) mobileTriggerAfterEvent();
   }
 
   return (
     <Menu secondary vertical={mobile}>
+      {mobile && (
+        <Menu.Item className="menu-item" name="home">
+          <Icon name="phone" />
+          +7 707 922 74 64
+        </Menu.Item>
+      )}
       <Menu.Item
         className="menu-item"
         name="home"

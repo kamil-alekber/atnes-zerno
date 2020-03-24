@@ -17,7 +17,7 @@ export default function SiteMenu() {
     event.preventDefault();
     setMobileMenu(true);
   }
-  console.log(mobileMenu);
+
   return (
     <React.Fragment>
       <span
@@ -30,7 +30,7 @@ export default function SiteMenu() {
             <MenuItems
               mobile
               mobileTriggerAfterEvent={() => {
-                setMobileMenu(true);
+                setMobileMenu(false);
               }}
             />
           </React.Fragment>
