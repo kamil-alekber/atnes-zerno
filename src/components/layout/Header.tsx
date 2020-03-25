@@ -6,7 +6,7 @@ interface Props {}
 export default function Header({}: Props) {
   return (
     <section id="header-section">
-      <span>ATNES-Zerno</span>
+      <h1 className="header-title">ATNES-Zerno</h1>
     </section>
   );
 }

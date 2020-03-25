@@ -2,13 +2,14 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { MenuItemProps, Icon } from "semantic-ui-react";
 import "./Menu.scss";
+import SidebarMenu from "./SidebarMenu";
 import MenuItems from "./MenuItems";
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function SiteMenu({ children }: Props) {
+export default function Menu({ children }: Props) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const router = useRouter();
 
@@ -22,13 +23,19 @@ export default function SiteMenu({ children }: Props) {
   ) {
     const path = data.name === "home" ? "/" : `/${data.name}`;
     router.push({ pathname: path });
+    setMobileMenu(false);
   }
 
   return (
     <React.Fragment>
-      <MenuItems mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}>
+      <MenuItems className="main-menu" handleMenuChange={handleMenuChange} />
+      <SidebarMenu
+        handleMenuChange={handleMenuChange}
+        mobileMenu={mobileMenu}
+        setMobileMenu={setMobileMenu}
+      >
         {children}
-      </MenuItems>
+      </SidebarMenu>
       {!mobileMenu && (
         <span className="mobile-menu" onClick={() => setMobileMenu(true)}>
           <Icon name="bars" />
