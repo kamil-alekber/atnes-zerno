@@ -4,21 +4,6 @@
   }
 }
 
-#menu {
-  display: flex;
-  justify-content: space-evenly;
-
-  .menu-item {
-    text-transform: uppercase;
-    color: #2873bd;
-  }
-}
-
-.menu-line {
-  margin: 1rem -500px 1rem -500px;
-  opacity: 0.4;
-}
-
 .mobile-menu {
   display: none;
 
@@ -27,16 +12,6 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 1;
-    background: #fff;
-
-    overflow: hidden;
-    border-radius: 10px;
-
-    .menu-item a {
-      color: #2873bd !important;
-    }
-
     :hover {
       cursor: pointer;
     }

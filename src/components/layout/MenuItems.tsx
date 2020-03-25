@@ -1,16 +1,17 @@
-import React from "react";
-import { Menu, MenuItemProps, Icon } from "semantic-ui-react";
 import { useRouter } from "next/router";
-
+import React, { Dispatch, SetStateAction } from "react";
+import { Menu, MenuItemProps, Segment, Sidebar } from "semantic-ui-react";
+import Header from "./Header";
+import Footer from "./Footer";
 interface Props {
-  mobile: boolean;
-  mobileTriggerAfterEvent?: () => void;
+  mobileMenu: boolean;
+  setMobileMenu?: Dispatch<SetStateAction<boolean>>;
+  children: React.ReactNode;
 }
 
-export default function MobileMenu(props: Props) {
+export default function MenuItems(props: Props) {
   const router = useRouter();
-  const { pathname } = router;
-  const { mobile, mobileTriggerAfterEvent } = props;
+  const { mobileMenu, setMobileMenu, children } = props;
 
   function handleMenuChange(
     _event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -18,53 +19,43 @@ export default function MobileMenu(props: Props) {
   ) {
     const path = data.name === "home" ? "/" : `/${data.name}`;
     router.push({ pathname: path });
-    if (mobile) mobileTriggerAfterEvent();
+    setMobileMenu(false);
   }
 
   return (
-    <Menu secondary vertical={mobile}>
-      {mobile && (
-        <Menu.Item className="menu-item" name="home">
-          <Icon name="phone" />
-          +7 707 922 74 64
-        </Menu.Item>
-      )}
-      <Menu.Item
-        className="menu-item"
-        name="home"
-        children="Домой"
-        active={pathname === "/"}
-        onClick={handleMenuChange}
-      />
-      <Menu.Item
-        className="menu-item"
-        name="catalog"
-        children="Каталог"
-        active={pathname === "/catalog"}
-        onClick={handleMenuChange}
-      />
-      <Menu.Item
-        className="menu-item"
-        name="about"
-        children="О компании"
-        active={pathname === "/about"}
-        onClick={handleMenuChange}
-      />
-      <Menu.Item
-        className="menu-item"
-        name="contact"
-        children="Контакты"
-        active={pathname === "/contact"}
-        onClick={handleMenuChange}
-      />
-      <Menu.Item
-        className="menu-item"
-        name="order"
-        active={pathname === "/order"}
-        onClick={handleMenuChange}
+    <Sidebar.Pushable>
+      <Sidebar
+        as={Menu}
+        id="main-menu"
+        onHide={() => setMobileMenu(false)}
+        animation="overlay"
+        direction="left"
+        inverted={true}
+        vertical={true}
+        visible={mobileMenu}
       >
-        <Icon name="shop" /> Ваши заказы
-      </Menu.Item>
-    </Menu>
+        <Menu.Item name="home" onClick={handleMenuChange} as="a" header>
+          Домой
+        </Menu.Item>
+        <Menu.Item name="catalog" onClick={handleMenuChange} as="a">
+          Каталог
+        </Menu.Item>
+        <Menu.Item name="about" onClick={handleMenuChange} as="a">
+          О компании
+        </Menu.Item>
+        <Menu.Item name="contact" onClick={handleMenuChange} as="a">
+          Контакты
+        </Menu.Item>
+        <Menu.Item name="order" onClick={handleMenuChange} as="a">
+          Ваши покупки
+        </Menu.Item>
+      </Sidebar>
+
+      <Sidebar.Pusher dimmed={mobileMenu}>
+        <Header />
+        <Segment basic>{children}</Segment>
+        <Footer />
+      </Sidebar.Pusher>
+    </Sidebar.Pushable>
   );
 }

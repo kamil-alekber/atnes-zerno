@@ -1,51 +1,39 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Icon, Menu } from "semantic-ui-react";
-import { useClickOutside } from "../../helpers/hooks/useClickOutside";
+import { MenuItemProps, Icon } from "semantic-ui-react";
 import "./Menu.scss";
 import MenuItems from "./MenuItems";
 
-export default function SiteMenu() {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function SiteMenu({ children }: Props) {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const router = useRouter();
 
-  const mobileMenuRef = useClickOutside(() => {
-    setMobileMenu(false);
-  });
-
-  function triggerMobileMenu(
-    event: React.MouseEvent<HTMLSpanElement, MouseEvent>
-  ) {
-    event.preventDefault();
+  function triggerMobileMenu(event: React.MouseEvent<any>) {
     setMobileMenu(true);
+  }
+
+  function handleMenuChange(
+    _event: React.MouseEvent<any>,
+    data: MenuItemProps
+  ) {
+    const path = data.name === "home" ? "/" : `/${data.name}`;
+    router.push({ pathname: path });
   }
 
   return (
     <React.Fragment>
-      <span
-        ref={mobileMenuRef}
-        onClick={triggerMobileMenu}
-        className="mobile-menu"
-      >
-        {mobileMenu ? (
-          <React.Fragment>
-            <MenuItems
-              mobile
-              mobileTriggerAfterEvent={() => {
-                setMobileMenu(false);
-              }}
-            />
-          </React.Fragment>
-        ) : (
+      <MenuItems mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}>
+        {children}
+      </MenuItems>
+      {!mobileMenu && (
+        <span className="mobile-menu" onClick={() => setMobileMenu(true)}>
           <Icon name="bars" />
-        )}
-      </span>
-
-      <div id="web-menu">
-        <hr className="menu-line" />
-        <Menu id="menu" secondary>
-          <MenuItems mobile={false} />
-        </Menu>
-        <hr className="menu-line" />
-      </div>
+        </span>
+      )}
     </React.Fragment>
   );
 }

@@ -1,30 +1,4 @@
-#header {
+#header-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  @media screen and (max-width: 880px) {
-    justify-content: center;
-  }
-
-  > div {
-    margin: 10px 10px 10px 0;
-  }
-
-  .header-second-item {
-    @media screen and (max-width: 880px) {
-      display: none;
-    }
-    .phone-number {
-      color: #2873bd;
-      font-size: 22px;
-      font-weight: 200;
-    }
-  }
-
-  .header-third-item {
-    @media screen and (max-width: 880px) {
-      display: none;
-    }
-  }
+  justify-content: center;
 }

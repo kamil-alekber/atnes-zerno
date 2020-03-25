@@ -13,6 +13,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 global.fetch = require("isomorphic-unfetch");
 
+// TODO add module-alias packet
 // require('module-alias').addAlias('src', __dirname);
 
 app.prepare().then(() => {
@@ -27,6 +28,12 @@ app.prepare().then(() => {
       app.render(req, res, "/", query);
     } else if (pathname === "/about") {
       app.render(req, res, "/about", query);
+    } else if (pathname === "/contact") {
+      app.render(req, res, "/contact", query);
+    } else if (pathname === "/order") {
+      app.render(req, res, "/order", query);
+    } else if (pathname === "/catalog") {
+      app.render(req, res, "/catalog", query);
     } else {
       //request else as usual
       handle(req, res, parsedUrl);
