@@ -1,47 +1,50 @@
 import React from "react";
 import "./About.scss";
-import { Item } from "semantic-ui-react";
+import { Segment, Statistic } from "semantic-ui-react";
 
 export default function index() {
   return (
-    <Item.Group>
-      <Item>
-        <Item.Image
-          size="small"
-          src="https://react.semantic-ui.com/images/wireframe/image.png"
-        />
+    <React.Fragment>
+      <h1 className="about-main-title">О копмании Атнес-Зерно</h1>
+      <br />
+      <Statistic floated="right">
+        <Statistic.Value>2,204</Statistic.Value>
+        <Statistic.Label>Views</Statistic.Label>
+      </Statistic>
 
-        <Item.Content>
-          <Item.Header as="a">Cute Dog</Item.Header>
-          <Item.Description>
-            <p>Some description</p>
-            <p>
-              Many people also have their own barometers for what makes a cute
-              dog.
-            </p>
-          </Item.Description>
-        </Item.Content>
-      </Item>
+      <p>
+        Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia
+        facete scriptorem, est autem aliquip detraxit at. Usu ocurreret
+        referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
+        electram, eos choro alterum definiebas in. Vim dolorum definiebas an.
+        Mei ex natum rebum iisque.
+      </p>
 
-      <Item>
-        <Item.Image
-          size="small"
-          src="https://react.semantic-ui.com/images/wireframe/image.png"
-        />
+      <p>
+        Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine
+        definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his
+        te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo
+        vide phaedrum, vim vivendum maiestatis in.
+      </p>
 
-        <Item.Content>
-          <Item.Header as="a">Cute Dog</Item.Header>
-          <Item.Description>some desct</Item.Description>
-        </Item.Content>
-      </Item>
+      <Statistic floated="left">
+        <Statistic.Value>2,204</Statistic.Value>
+        <Statistic.Label>Views</Statistic.Label>
+      </Statistic>
 
-      <Item>
-        <Item.Image
-          size="small"
-          src="https://react.semantic-ui.com/images/wireframe/image.png"
-        />
-        <Item.Content header="Cute Dog">some descr</Item.Content>
-      </Item>
-    </Item.Group>
+      <p>
+        Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei
+        ut facer dolores adolescens, no illum aperiri quo, usu odio brute at.
+        Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam,
+        wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire
+        mnesarchum eu per, quas minimum postulant per id.
+      </p>
+      <p>
+        Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine
+        definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his
+        te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo
+        vide phaedrum, vim vivendum maiestatis in.
+      </p>
+    </React.Fragment>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Item } from "semantic-ui-react";
 import BuyModal from "../buy";
+import "./Order.scss";
 
 const products = [
   {
@@ -13,12 +14,12 @@ const products = [
 
 export default function index() {
   return (
-    <section className="order-section">
+    <section id="order-section">
       <h1 className="page-title">Ваши заказы</h1>
-      <Item.Group divided>
+      <Item.Group className="order-section-group" divided>
         {products.map((item, index) => {
           return (
-            <Item key={index}>
+            <Item className="order-section-item" key={index}>
               <Item.Image
                 size="tiny"
                 src={require("../../assets/images/main1.jpg")}
@@ -32,7 +33,7 @@ export default function index() {
                 <Item.Description>{item.description}</Item.Description>
               </Item.Content>
               {index === 0 && (
-                <Item.Extra>
+                <Item.Extra className="order-section-extra">
                   <BuyModal triggerModelBtn="Оформить заказ" />
                 </Item.Extra>
               )}

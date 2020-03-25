@@ -6,7 +6,7 @@ const paragraph =
 
 export default function Catalog() {
   return (
-    <section className="catalog-section">
+    <section id="catalog-section">
       <Item.Group relaxed>
         <Item>
           <Item.Image

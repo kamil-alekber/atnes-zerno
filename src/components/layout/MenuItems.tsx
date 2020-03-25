@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon, Menu, MenuItemProps } from "semantic-ui-react";
+import { useRouter } from "next/router";
 
 interface Props {
   handleMenuChange: (
@@ -11,21 +12,43 @@ interface Props {
 
 export default function MenuItems(props: Props) {
   const { handleMenuChange, className } = props;
+  const router = useRouter();
+  const { pathname } = router;
   const children = (
     <>
-      <Menu.Item name="home" onClick={handleMenuChange} as="a" header>
+      <Menu.Item
+        active={pathname === "/"}
+        name="home"
+        onClick={handleMenuChange}
+      >
         Домой
       </Menu.Item>
-      <Menu.Item name="catalog" onClick={handleMenuChange} as="a">
+      <Menu.Item
+        active={pathname === "/catalog"}
+        name="catalog"
+        onClick={handleMenuChange}
+      >
         Каталог
       </Menu.Item>
-      <Menu.Item name="about" onClick={handleMenuChange} as="a">
+      <Menu.Item
+        active={pathname === "/about"}
+        name="about"
+        onClick={handleMenuChange}
+      >
         О компании
       </Menu.Item>
-      <Menu.Item name="contact" onClick={handleMenuChange} as="a">
+      <Menu.Item
+        active={pathname === "/contact"}
+        name="contact"
+        onClick={handleMenuChange}
+      >
         Контакты
       </Menu.Item>
-      <Menu.Item name="order" onClick={handleMenuChange} as="a">
+      <Menu.Item
+        active={pathname === "/order"}
+        name="order"
+        onClick={handleMenuChange}
+      >
         <Icon color="blue" name="shopping cart" />
         Ваши покупки
       </Menu.Item>
@@ -33,6 +56,8 @@ export default function MenuItems(props: Props) {
   );
 
   if (className === "main-menu")
-    return <Menu borderless className={className} children={children} />;
+    return (
+      <Menu borderless tabular className={className} children={children} />
+    );
   return children;
 }

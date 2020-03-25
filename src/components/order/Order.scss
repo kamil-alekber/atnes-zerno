@@ -1,0 +1,22 @@
+#order-section {
+  .order-section-group {
+    margin-top: 5rem;
+  }
+
+  .order-section-item {
+    position: relative;
+    margin-top: 2rem;
+    .order-section-extra {
+      display: inline-block !important;
+      @media screen and (max-width: 880px) {
+        position: absolute;
+        top: -4.5rem;
+        left: -10px;
+
+        > button {
+          float: none !important;
+        }
+      }
+    }
+  }
+}

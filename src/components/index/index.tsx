@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Image, Item, Divider } from "semantic-ui-react";
+import { Image, Item, Icon } from "semantic-ui-react";
+import "./Index.scss";
 
 export default function index() {
   const router = useRouter();
@@ -26,16 +27,23 @@ export default function index() {
           <Item.Description>
             <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
           </Item.Description>
-          <Item.Extra as="a" onClick={handleItemClick("123")}>
-            Additional Details
+          <Item.Extra
+            className="index-group-item-extra"
+            as="a"
+            onClick={handleItemClick("123")}
+          >
+            Дополнительная информация
+            <Icon name="angle right" />
           </Item.Extra>
         </Item.Content>
       </Item>
     );
   });
   return (
-    <section className="index-section">
-      <Item.Group divided>{items}</Item.Group>
+    <section id="index-section">
+      <Item.Group className="index-group-item" divided>
+        {items}
+      </Item.Group>
     </section>
   );
 }

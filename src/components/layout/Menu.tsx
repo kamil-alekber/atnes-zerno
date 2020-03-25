@@ -13,10 +13,6 @@ export default function Menu({ children }: Props) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const router = useRouter();
 
-  function triggerMobileMenu(event: React.MouseEvent<any>) {
-    setMobileMenu(true);
-  }
-
   function handleMenuChange(
     _event: React.MouseEvent<any>,
     data: MenuItemProps
