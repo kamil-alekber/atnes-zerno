@@ -28,17 +28,17 @@ export default function Menu({ children }: Props) {
 
   return (
     <React.Fragment>
-      <MenuItems className="main-menu" handleMenuChange={handleMenuChange} />
       <SidebarMenu
         handleMenuChange={handleMenuChange}
         mobileMenu={mobileMenu}
         setMobileMenu={setMobileMenu}
       >
+        <MenuItems className="main-menu" handleMenuChange={handleMenuChange} />
         {children}
       </SidebarMenu>
       {!mobileMenu && (
         <span className="mobile-menu" onClick={() => setMobileMenu(true)}>
-          <Icon name="bars" />
+          <Icon size="large" name="bars" />
         </span>
       )}
     </React.Fragment>

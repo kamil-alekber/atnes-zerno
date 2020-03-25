@@ -1,5 +1,5 @@
-import React, { Fragment, MouseEvent } from "react";
-import { Menu, MenuItemProps } from "semantic-ui-react";
+import React from "react";
+import { Icon, Menu, MenuItemProps } from "semantic-ui-react";
 
 interface Props {
   handleMenuChange: (
@@ -26,12 +26,13 @@ export default function MenuItems(props: Props) {
         Контакты
       </Menu.Item>
       <Menu.Item name="order" onClick={handleMenuChange} as="a">
+        <Icon color="blue" name="shopping cart" />
         Ваши покупки
       </Menu.Item>
     </>
   );
 
   if (className === "main-menu")
-    return <Menu className={className} children={children} />;
+    return <Menu borderless className={className} children={children} />;
   return children;
 }
