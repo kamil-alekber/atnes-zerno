@@ -10,7 +10,9 @@ export default function index() {
   function handleItemClick(id: string) {
     return () => {
       const q = Object.assign(query, { id });
-      router.push({ pathname: "/details", query: q });
+      router
+        .push({ pathname: "/details", query: q })
+        .then(() => window.scrollTo(0, 0));
     };
   }
   const items = [1, 1, 1, 1].map((item, index) => {

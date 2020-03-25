@@ -39,9 +39,14 @@ export default function BuyModal(props: Props) {
         delete state.error[key];
       }
     }
+    console.log(Object.values(state.error));
+    if (Object.values(state.error).length === 0) {
+      setVisible(false);
+      dispatch({ data: initialState, type: "clear" });
+    }
   };
 
-  const onFormChnage = (type: string) => {
+  const onFormItemChange = (type: string) => {
     return (e: any) => {
       dispatch({ data: { [type]: e.target.value }, type: "change" });
     };
@@ -66,23 +71,26 @@ export default function BuyModal(props: Props) {
           <Header>Заполните форму вашими данными</Header>
           <Form onSubmit={handleFormSumbit}>
             <Form.Field required>
-              <input onChange={onFormChnage("firstName")} placeholder="Имя" />
+              <input
+                onChange={onFormItemChange("firstName")}
+                placeholder="Имя"
+              />
             </Form.Field>
             <Form.Field required>
               <input
-                onChange={onFormChnage("lastName")}
+                onChange={onFormItemChange("lastName")}
                 placeholder="Фамилия"
               />
             </Form.Field>
             <Form.Field required>
               <input
-                onChange={onFormChnage("phoneNumber")}
+                onChange={onFormItemChange("phoneNumber")}
                 placeholder="Телефон"
               />
             </Form.Field>
             <Form.Field>
               <label>Дополнительная информация:</label>
-              <TextArea onChange={onFormChnage("meta")} />
+              <TextArea onChange={onFormItemChange("meta")} />
             </Form.Field>
             <Form.Field required>
               <Checkbox label="Даю согласие на обработку персональных данных" />

@@ -29,7 +29,7 @@ export function BuyModalFormReducer(state: S, action: A) {
     case "clear":
       state = initialState;
     case "change":
-      state = Object.assign(state, action.data);
+      state = { ...state, ...action.data };
     default:
       break;
   }
