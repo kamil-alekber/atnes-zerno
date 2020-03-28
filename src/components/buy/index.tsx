@@ -60,7 +60,14 @@ export default function BuyModal(props: Props) {
   );
 
   return (
-    <Modal open={visible} trigger={trigger} closeIcon>
+    <Modal
+      closeOnEscape
+      closeOnDimmerClick
+      onClose={handleClose}
+      open={visible}
+      trigger={trigger}
+      closeIcon
+    >
       <Modal.Header>Завершение покупки</Modal.Header>
       <Modal.Content image>
         <Image
