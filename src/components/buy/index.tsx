@@ -39,10 +39,11 @@ export default function BuyModal(props: Props) {
         delete state.error[key];
       }
     }
-    console.log(Object.values(state.error));
+
     if (Object.values(state.error).length === 0) {
       setVisible(false);
       dispatch({ data: initialState, type: "clear" });
+      //TODO: pop-up success
     }
   };
 
@@ -59,7 +60,7 @@ export default function BuyModal(props: Props) {
   );
 
   return (
-    <Modal open={visible} trigger={trigger}>
+    <Modal open={visible} trigger={trigger} closeIcon>
       <Modal.Header>Завершение покупки</Modal.Header>
       <Modal.Content image>
         <Image
@@ -67,6 +68,7 @@ export default function BuyModal(props: Props) {
           size="medium"
           src={require("../../assets/images/main1.jpg")}
         />
+        {/* <Icon name="close" > */}
         <Modal.Description>
           <Header>Заполните форму вашими данными</Header>
           <Form onSubmit={handleFormSumbit}>

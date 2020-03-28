@@ -15,7 +15,7 @@ const products = [
 export default function index() {
   return (
     <section id="order-section">
-      <h1 className="page-title">Ваши заказы</h1>
+      {/* <h1 className="page-title">Список выбранных товаров</h1> */}
       <Item.Group className="order-section-group" divided>
         {products.map((item, index) => {
           return (

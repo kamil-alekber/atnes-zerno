@@ -4,8 +4,8 @@ import { Segment, Statistic } from "semantic-ui-react";
 
 export default function index() {
   return (
-    <React.Fragment>
-      <h1 className="about-main-title">О копмании Атнес-Зерно</h1>
+    <section id="about-section">
+      <h1 className="about-main-title">О копмании</h1>
       <br />
       <Statistic floated="right">
         <Statistic.Value>2,204</Statistic.Value>
@@ -45,6 +45,6 @@ export default function index() {
         te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo
         vide phaedrum, vim vivendum maiestatis in.
       </p>
-    </React.Fragment>
+    </section>
   );
 }

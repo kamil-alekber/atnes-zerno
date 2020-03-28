@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
 import "../assets/style/main.scss";
 import Menu from "../components/layout/Menu";
+import { Router } from "next/router";
+import NProgress from "nprogress";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",
@@ -28,6 +30,14 @@ export const OrderCountContext = React.createContext<OrderCountContext>({
   orderCount: 0,
   setOrderCount: () => {}
 });
+
+NProgress.settings.showSpinner = false;
+Router.events.on("routeChangeStart", url => {
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+});
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 export default function App({ Component, pageProps }) {
   const [orderCount, setOrderCount] = useState(() => {
