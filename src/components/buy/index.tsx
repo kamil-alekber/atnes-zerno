@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useContext } from "react";
 import { BuyModalFormReducer, initialState } from "./BuyModalReducer";
 import {
   Modal,
@@ -8,9 +8,9 @@ import {
   Form,
   Checkbox,
   TextArea,
-  FormProps,
   Icon
 } from "semantic-ui-react";
+import { MsgContext } from "../layout/Notification";
 
 interface Props {
   triggerModelBtn: React.ReactNode;
@@ -19,15 +19,13 @@ interface Props {
 export default function BuyModal(props: Props) {
   const [visible, setVisible] = useState(false);
   const [state, dispatch] = useReducer(BuyModalFormReducer, initialState);
+  const { emitMessage } = useContext(MsgContext);
 
   const handleClose = () => {
     setVisible(false);
   };
 
-  const handleFormSumbit = (
-    event: React.FormEvent<HTMLFormElement>,
-    data: FormProps
-  ) => {
+  const handleFormSumbit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     for (const [key, value] of Object.entries(state)) {
       if (!value && key !== "success" && key !== "error" && key !== "meta") {
@@ -43,7 +41,7 @@ export default function BuyModal(props: Props) {
     if (Object.values(state.error).length === 0) {
       setVisible(false);
       dispatch({ data: initialState, type: "clear" });
-      //TODO: pop-up success
+      emitMessage();
     }
   };
 

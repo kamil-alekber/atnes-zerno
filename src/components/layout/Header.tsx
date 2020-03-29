@@ -8,7 +8,7 @@ export default function Header({}: Props) {
   const router = useRouter();
 
   return (
-    <section id="header-section">
+    <section id="Headerader-section">
       <h1 onClick={() => router.push("/")} className="header-title">
         Атнес-Зерно
       </h1>

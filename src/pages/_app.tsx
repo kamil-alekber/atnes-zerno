@@ -30,6 +30,7 @@ export const OrderCountContext = React.createContext<OrderCountContext>({
   orderCount: 0,
   setOrderCount: () => {}
 });
+import Notification from "../components/layout/Notification";
 
 NProgress.settings.showSpinner = false;
 Router.events.on("routeChangeStart", url => {
@@ -50,11 +51,13 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main id="_app">
-      <OrderCountContext.Provider value={{ orderCount, setOrderCount }}>
-        <Menu>
-          <Component {...pageProps} app={app} />
-        </Menu>
-      </OrderCountContext.Provider>
+      <Notification>
+        <OrderCountContext.Provider value={{ orderCount, setOrderCount }}>
+          <Menu>
+            <Component {...pageProps} app={app} />
+          </Menu>
+        </OrderCountContext.Provider>
+      </Notification>
     </main>
   );
 }
