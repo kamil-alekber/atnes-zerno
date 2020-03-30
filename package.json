@@ -4,22 +4,26 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "fire": "firebase deploy --token $FIREBASE_TOKEN --non-interactive",
     "dev": "APP_TYPE=dev nodemon ./server.js",
-    "build": "APP_TYPE=prod next build && next export",
-    "start": "APP_TYPE=prod next start"
+    "build": "APP_TYPE=prod next build && next export && yarn fire",
+    "start": "APP_TYPE=prod next start",
+    "test": "echo \"NO tests yet\""
   },
   "dependencies": {
     "dotenv": "8.2.0",
     "isomorphic-unfetch": "3.0.0",
     "next": "9.3.0",
-    "nprogress": "^0.2.0",
+    "nprogress": "0.2.0",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "semantic-ui-css": "2.4.1",
     "semantic-ui-react": "0.88.2"
   },
   "devDependencies": {
-    "@types/nprogress": "^0.2.0",
+    "firebase": "7.11.0",
+    "firebase-tools": "7.15.0",
+    "@types/nprogress": "0.2.0",
     "@types/react": "16.9.23",
     "@types/semantic-ui": "2.2.7",
     "@zeit/next-css": "1.0.1",
@@ -27,8 +31,6 @@
     "autoprefixer": "9.7.4",
     "css-loader": "3.4.2",
     "file-loader": "6.0.0",
-    "firebase": "7.11.0",
-    "firebase-tools": "7.15.0",
     "next-images": "1.3.1",
     "node-sass": "4.13.1",
     "nodemon": "2.0.2",
