@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "fire": "firebase deploy --token $FIREBASE_TOKEN --only hosting --non-interactive",
+    "fire": "firebase deploy --token $FIREBASE_TOKEN --non-interactive",
     "dev": "APP_TYPE=dev nodemon ./server.js",
-    "build": "APP_TYPE=prod next build && next export && fire",
+    "build": "APP_TYPE=prod next build && next export && yarn fire",
     "start": "APP_TYPE=prod next start",
     "test": "echo \"NO tests yet\""
   },
