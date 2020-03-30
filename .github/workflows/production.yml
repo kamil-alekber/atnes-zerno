@@ -25,7 +25,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
       - run: yarn test
-      - run: yarn build && npx firebase deploy --token $FIREBASE_TOKEN --only hosting --non-interactive
+      - run: yarn build
+      - run: yarn firebase deploy --token $FIREBASE_TOKEN --only hosting --non-interactive
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         CI: true
