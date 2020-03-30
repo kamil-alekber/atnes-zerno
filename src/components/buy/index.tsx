@@ -14,6 +14,7 @@ import { MsgContext } from "../layout/Notification";
 
 interface Props {
   triggerModelBtn: React.ReactNode;
+  app: firebase.app.App;
 }
 
 export default function BuyModal(props: Props) {
@@ -42,6 +43,7 @@ export default function BuyModal(props: Props) {
       setVisible(false);
       dispatch({ data: initialState, type: "clear" });
       emitMessage();
+      props.app.analytics().logEvent("notification_received form is ok");
     }
   };
 

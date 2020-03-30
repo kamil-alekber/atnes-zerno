@@ -12,7 +12,7 @@ const products = [
   { title: "Первый сорт", price: "200тг", description: "Тоже не плохо" }
 ];
 
-export default function index() {
+export default function index({ app }: { app: firebase.app.App }) {
   return (
     <section id="order-section">
       {/* <h1 className="page-title">Список выбранных товаров</h1> */}
@@ -34,7 +34,7 @@ export default function index() {
               </Item.Content>
               {index === 0 && (
                 <Item.Extra className="order-section-extra">
-                  <BuyModal triggerModelBtn="Оформить заказ" />
+                  <BuyModal app={app} triggerModelBtn="Оформить заказ" />
                 </Item.Extra>
               )}
             </Item>

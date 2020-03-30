@@ -5,6 +5,7 @@ import "../assets/style/main.scss";
 import Menu from "../components/layout/Menu";
 import { Router } from "next/router";
 import NProgress from "nprogress";
+import "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAogtjW-13s-seM51sVzij1nYQQ_QAvqYM",
@@ -16,7 +17,6 @@ const firebaseConfig = {
   appId: "1:1006150743739:web:de9588bfd423092ac05b9e",
   measurementId: "G-TWDZVLZ0KC"
 };
-
 const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
