@@ -28,4 +28,3 @@ jobs:
       - run: yarn build
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        CI: true
