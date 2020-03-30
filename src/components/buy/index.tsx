@@ -11,16 +11,16 @@ import {
   Icon
 } from "semantic-ui-react";
 import { MsgContext } from "../layout/Notification";
-
+import { FirebaseContext } from "../../pages/firebase";
 interface Props {
   triggerModelBtn: React.ReactNode;
-  app: firebase.app.App;
 }
 
 export default function BuyModal(props: Props) {
   const [visible, setVisible] = useState(false);
   const [state, dispatch] = useReducer(BuyModalFormReducer, initialState);
   const { emitMessage } = useContext(MsgContext);
+  const { app } = useContext(FirebaseContext);
 
   const handleClose = () => {
     setVisible(false);
@@ -43,7 +43,7 @@ export default function BuyModal(props: Props) {
       setVisible(false);
       dispatch({ data: initialState, type: "clear" });
       emitMessage();
-      props.app.analytics().logEvent("notification_received form is ok");
+      app.analytics().logEvent("notification_received form is ok");
     }
   };
 
