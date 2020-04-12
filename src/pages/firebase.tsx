@@ -1,4 +1,4 @@
-import firebase, { FirebaseError } from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/analytics";
 import React, { useState } from "react";
 
@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "test-client-public.appspot.com",
   messagingSenderId: "1006150743739",
   appId: "1:1006150743739:web:de9588bfd423092ac05b9e",
-  measurementId: "G-TWDZVLZ0KC"
+  measurementId: "G-TWDZVLZ0KC",
 };
 
 export function firebaseInitApp() {
@@ -32,7 +32,7 @@ export const FirebaseContext = React.createContext<{ app?: firebase.app.App }>(
 );
 
 export default function WithFirebase({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {

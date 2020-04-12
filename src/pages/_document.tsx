@@ -5,7 +5,7 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="shortcut icon" href={require("../assets/favicon.ico")} />
         </Head>
         <body>
           <Main />
